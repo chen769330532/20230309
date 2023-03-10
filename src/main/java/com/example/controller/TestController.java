@@ -32,7 +32,7 @@ public class TestController {
     private static final String API_URL = "https://api.openai.com/v1/completions";
 
     public static void main(String[] args) throws IOException {
-//        test1();
+        test1();
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders requestHeaders = new HttpHeaders();
         requestHeaders.set("Content-Type", "application/json");
