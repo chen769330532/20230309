@@ -1,0 +1,23 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    url: jdbc:mysql://47.115.36.86:3308/business?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver  #最新版springboot整合的mysql中,原来的mysql驱动com.mysql.jdbc.Driver改成com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  level:
+    com: info
+  file:
+    max-history: 30
+    max-size: 10MB
+

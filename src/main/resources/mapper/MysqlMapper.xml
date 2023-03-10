@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.MysqlMapper">
+    <resultMap id="emp" type="com.example.pojo.Emp">
+        <result column="EMPNO" property="empNo" jdbcType="INTEGER"/>
+        <result column="ENAME" property="eName" jdbcType="VARCHAR"/>
+        <result column="JOB" property="job" jdbcType="VARCHAR"/>
+        <result column="MGR" property="mgr" jdbcType="INTEGER"/>
+        <result column="HIREDATE" property="hireDate" jdbcType="VARCHAR"/>
+        <result column="SAL" property="sal" jdbcType="DOUBLE"/>
+        <result column="COMM" property="comm" jdbcType="DOUBLE"/>
+        <result column="DEPTNO" property="deptNo" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="job" resultMap="emp">
+        select empno,ename,deptno from emp
+        <where>
+            job = #{job}
+        </where>
+    </select>
+
+</mapper>
